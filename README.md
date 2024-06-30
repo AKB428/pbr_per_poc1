@@ -2,6 +2,15 @@
 
 APIのリンク https://jpx-jquants.com/
 
+
+## 準備
+
+銘柄をコード変換するためにTSEライブラリを使う(APIからでもできるがAPIコール抑えるのとデータ処理簡素化のため)
+
+```
+pip install tokyo-stock-exchange
+```
+
 ## 設定 J-Quants APIのリフレッシュトークンを環境変数に設定
 
 ```
