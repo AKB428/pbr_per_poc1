@@ -3,6 +3,7 @@ import os
 import json
 import pandas as pd
 import sys
+from tokyo_stock_exchange import tse
 
 def format_number(value):
     try:
@@ -10,11 +11,14 @@ def format_number(value):
     except (ValueError, TypeError):
         return value
 
-# 銘柄コードを第一引数から取得
-if len(sys.argv) < 2:
-    raise ValueError("銘柄コードを指定してください。")
+# 銘柄名またはコードを第一引数から取得
+stock_name_or_code = sys.argv[1]
 
-code = sys.argv[1]
+# 銘柄コードを取得
+stock_info = tse.get_stock_info(stock_name_or_code)
+if not stock_info:
+    raise ValueError(f"銘柄 '{stock_name_or_code}' の情報が見つかりません。")
+code = stock_info[0]
 
 # 環境変数からREFRESH_TOKENを取得
 REFRESH_TOKEN = os.getenv("REFRESH_TOKEN")
