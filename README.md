@@ -82,6 +82,10 @@ DisclosedDate NetSales          OperatingProfit  OrdinaryProfit   Profit        
 ## [5] PERをもう少し正確にだす　直近1年の最高値と最低値株価をもとにPER算出
 
 ```
+python3 getPerPbr2.py 任天堂
+```
+
+```
 Stock Info: ('7974', '任天堂')
 DisclosedDate NetSales          OperatingProfit OrdinaryProfit  Profit          EarningsPerShare BookValuePerShare ClosingPrice PER  PBR
 2022-05-10    1,695,344,000,000 592,760,000,000 670,813,000,000 477,691,000,000 4046.69          17635.6           56,360       13.9 3.20
